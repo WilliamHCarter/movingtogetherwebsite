@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ProfileImage from "../components/ProfileImage.astro";
+---
+
+<Layout title="Moving Together">
+  <main>
+    <div class="navbar"><h3>Moving Together</h3></div>
+    <div class="hero-image">
+      <h2 class="hero-text">
+        Getting ready to move can be stressful. We can help.
+      </h2>
+      <h1 class="hero-text">We are with you all the way</h1>
+    </div>
+
+    <div class="about-us">
+      <h2>About Us</h2>
+      <ul role="list" class="link-card-grid">
+        <Card
+          src="/organization.webp"
+          title="Organization and Planning"
+          body="Making the most of your space - edit and organize."
+        />
+        <Card
+          src="/care.webp"
+          title="Moving with Care and Ease"
+          body="Thinking and planning ahead can be the most important is the most part of the process."
+        />
+        <Card
+          src="/declutter.png"
+          title="Decluttering and Downsizing"
+          body="Our goal is to keep your process stress free."
+        />
+      </ul>
+    </div>
+
+    <div class="testimonials">
+      <h2>See what our customers are saying</h2>
+      <ul role="list" class="testimonial-flex">
+        <ProfileImage
+          src="/organization.webp"
+          title="Customer Testimonial"
+          body="We had a stress-free and easy move with the help of Rachel and her team. \
+			From assistance with downsizing editing, and decluttering to packing and moving,\
+			 Rachel and her team were there every step of the way."
+        />
+        <ProfileImage
+          src="/care.webp"
+          title="Customer Testimonial"
+          body="My husband and I have worked with Rachel Carter for over a year.\
+			 We wanted to sell our 'too large' home and downsize to a smaller property.\
+			  We relied on Rachel to stage, market, and sell out house while also looking\
+			   for a new and appropriate place to live."
+        />
+        <ProfileImage
+          src="/declutter.png"
+          title="Customer Testimonial"
+          body="Our goal is to keep your process stress free."
+        />
+      </ul>
+      <div class="bottom"></div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .navbar {
+    padding-top: 1rem;
+    color: var(--accent);
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+  }
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+      url("/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    margin: 0 !important;
+  }
+  .hero-text {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  .about-us {
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    text-align: center;
+    color: var(--accent);
+  }
+  .testimonials {
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+      url("/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .testimonials > h2 {
+    padding-top: 3rem;
+  }
+  .bottom {
+    height: 4rem;
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+  .testimonial-flex{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	flex-wrap: wrap;
+  }
+</style>
