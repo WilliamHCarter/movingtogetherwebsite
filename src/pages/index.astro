@@ -44,27 +44,31 @@ import { Image } from "@astrojs/image/components";
       <h2>See what our customers are saying</h2>
       <ul role="list" class="testimonial-flex">
         <ProfileImage
-          src="/testm1.webp"
+          src="/organization.webp"
           title="Customer Testimonial"
           body="We had a stress-free and easy move with the help of Rachel and her team. \
-			From assistance with downsizing editing, and decluttering to packing and moving,\
-			 Rachel and her team were there every step of the way."
+			          From assistance with downsizing editing, and decluttering to packing and moving,\
+			          Rachel and her team were there every step of the way."
         />
         <ProfileImage
-          src="/testm2.webp"
+          src="/care.webp"
           title="Customer Testimonial"
           body="My husband and I have worked with Rachel Carter for over a year.\
-			 We wanted to sell our 'too large' home and downsize to a smaller property.\
-			  We relied on Rachel to stage, market, and sell out house while also looking\
-			   for a new and appropriate place to live."
+			          We wanted to sell our 'too large' home and downsize to a smaller property.\
+			          We relied on Rachel to stage, market, and sell out house while also looking\
+			          for a new and appropriate place to live. Navigating through the dual process, \
+                Rachel’s constant attention to detail was invaluable. Every phase of downsizing,\
+                selling, buying and moving with both properties was handled calmly, professionally,\
+                and with great care. Rachel helped lead us to an ideal outcome."
         />
         <ProfileImage
-          src="/testm3.webp"
+          src="/declutter.png"
           title="Customer Testimonial"
-          body="We had a wonderful experience working with Rachel in getting ready to move and put our house on the market.\
-          Her recommendations on home staging and space organizing greatly improved how our house presented\
-          and made our move into our new home that much easier. Rachel's professional, thorough knowledge and\
-          attitude contributed to a very successful experience. We will definitely recommend her!"
+          body="We had a wonderful experience working with Rachel in getting ready to move\
+                and put our house on the market. Her recommendations on home staging and space\
+                organizing greatly improved how our house presented and made our move into our\
+                new home that much easier. Rachel's professional, thorough knowledge and\
+                attitude contributed to a very successful experience. We will definitely recommend her!"
         />
       </ul>
       <div class="bottom"></div>
@@ -77,11 +81,6 @@ import { Image } from "@astrojs/image/components";
 </Layout>
 
 <style>
-    @media only screen and (max-width: 600px) {
-    .hero-text {
-      font-size: 1.5rem;
-    }
-  }
   html {
     scroll-behavior: smooth;
   }
@@ -115,6 +114,14 @@ import { Image } from "@astrojs/image/components";
   }
   h1 {
     font-size: 5rem;
+  }
+  @media only screen and (max-width: 600px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+    h1{
+      font-size: 2rem;
+    }
   }
   .about-us {
     margin-top: 8vh;
@@ -160,6 +167,7 @@ import { Image } from "@astrojs/image/components";
   }
   .testimonial-flex {
     display: grid;
+    justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
