@@ -31,6 +31,7 @@ const { src, title, body } = Astro.props;
     background-size: 400%;
     background-position: 100%;
     width: 20vw;
+    min-width:16rem;
   }
   .link-card > a {
     width: 100%;
@@ -42,21 +43,22 @@ const { src, title, body } = Astro.props;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-top:2rem;
-    margin-bottom:2rem;
-    
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .image-container {
-	margin-left: 30%;
-	margin-right: 30%;
-  margin-bottom: 2rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
   }
   img {
     width: 100%;
-	border-radius: 50%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
   }
   h2 {
     margin-top: 1rem;

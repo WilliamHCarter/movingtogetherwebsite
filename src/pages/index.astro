@@ -41,14 +41,14 @@ import Contact from "../components/ContactForm.astro";
       <h2>See what our customers are saying</h2>
       <ul role="list" class="testimonial-flex">
         <ProfileImage
-          src="/organization.webp"
+          src="/testm1.webp"
           title="Customer Testimonial"
           body="We had a stress-free and easy move with the help of Rachel and her team. \
 			From assistance with downsizing editing, and decluttering to packing and moving,\
 			 Rachel and her team were there every step of the way."
         />
         <ProfileImage
-          src="/care.webp"
+          src="/testm2.webp"
           title="Customer Testimonial"
           body="My husband and I have worked with Rachel Carter for over a year.\
 			 We wanted to sell our 'too large' home and downsize to a smaller property.\
@@ -56,7 +56,7 @@ import Contact from "../components/ContactForm.astro";
 			   for a new and appropriate place to live."
         />
         <ProfileImage
-          src="/declutter.png"
+          src="/testm3.webp"
           title="Customer Testimonial"
           body="Our goal is to keep your process stress free."
         />
@@ -137,11 +137,11 @@ import Contact from "../components/ContactForm.astro";
     padding: 0;
   }
   .testimonial-flex{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
 	margin-left: 5vw;
 	margin-right: 5vw;
-	flex-wrap: wrap;
   }
 </style>
