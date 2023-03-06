@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ProfileImage from "../components/ProfileImage.astro";
 import NavBar from "../components/NavBar.astro";
+import Contact from "../components/ContactForm.astro";
 ---
 
 <Layout title="Moving Together">
@@ -62,11 +63,16 @@ import NavBar from "../components/NavBar.astro";
       </ul>
       <div class="bottom"></div>
     </div>
+    <Contact />
+    <div class="footer">
+      <p>COPYRIGHT © 2023 MOVING TOGETHER - ALL RIGHTS RESERVED</p>
+    </div>
   </main>
 </Layout>
 
 <style>
    html{scroll-behavior:smooth}
+   body{margin: 0;}
   .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
       url("/hero-image.jpg");
@@ -113,6 +119,16 @@ import NavBar from "../components/NavBar.astro";
   }
   .bottom {
     height: 4rem;
+  }
+  .footer{
+    height:8rem;
+    background-color: #EEEEEE;
+  }
+  .footer > p{
+    text-align: center;
+    padding-top: 4rem;
+    color: rgb(89, 89, 89);
+    font-size: 0.8rem;
   }
   .link-card-grid {
     display: grid;
