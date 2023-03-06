@@ -4,7 +4,7 @@ import Card from "../components/Card.astro";
 import ProfileImage from "../components/ProfileImage.astro";
 import NavBar from "../components/NavBar.astro";
 import Contact from "../components/ContactForm.astro";
-import Hero from "/public/hero-image.jpg";
+import Hero from "/public/hero.webp";
 import { Image } from "@astrojs/image/components";
 ---
 
@@ -12,7 +12,7 @@ import { Image } from "@astrojs/image/components";
   <main>
     <NavBar />
     <div class="hero-image">
-      <Image class="imm" src={Hero} alt="" width={4032} height={2789} />
+      <Image class="imm" src={Hero} alt="" width={2048} height={2048} />
       <h2 class="hero-text">
         Getting ready to move can be stressful. We can help.
       </h2>
@@ -94,6 +94,7 @@ import { Image } from "@astrojs/image/components";
     height: 80vh;
     width: 100%;
     position: absolute;
+    object-fit: cover;
     filter: brightness(70%);
   }
   .hero-text {
