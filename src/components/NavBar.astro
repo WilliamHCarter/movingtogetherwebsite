@@ -1,0 +1,57 @@
+---
+import Logo from "../components/Logo.astro";
+---
+
+<div class="nav-container">
+  <div class="navbar">
+    <h3>Moving Together</h3>
+    <Logo />
+  </div>
+  <div class="navlinks">
+    <a href="#">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#testm">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+<style>
+  .navbar {
+    color: var(--accent);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    gap: 1rem;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    align-items: center;
+  }
+  .navlinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 2vw;
+  }
+  .navlinks > a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+  color: var(--accent);
+}
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+  }
+</style>

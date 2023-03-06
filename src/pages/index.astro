@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ProfileImage from "../components/ProfileImage.astro";
+import NavBar from "../components/NavBar.astro";
 ---
 
 <Layout title="Moving Together">
   <main>
-    <div class="navbar"><h3>Moving Together</h3></div>
+    <NavBar />
     <div class="hero-image">
       <h2 class="hero-text">
         Getting ready to move can be stressful. We can help.
@@ -14,7 +15,7 @@ import ProfileImage from "../components/ProfileImage.astro";
       <h1 class="hero-text">We are with you all the way</h1>
     </div>
 
-    <div class="about-us">
+    <div class="about-us" id="about">
       <h2>About Us</h2>
       <ul role="list" class="link-card-grid">
         <Card
@@ -35,7 +36,7 @@ import ProfileImage from "../components/ProfileImage.astro";
       </ul>
     </div>
 
-    <div class="testimonials">
+    <div class="testimonials" id="testm">
       <h2>See what our customers are saying</h2>
       <ul role="list" class="testimonial-flex">
         <ProfileImage
@@ -65,17 +66,7 @@ import ProfileImage from "../components/ProfileImage.astro";
 </Layout>
 
 <style>
-  .navbar {
-    padding-top: 1rem;
-    color: var(--accent);
-    margin: 0;
-  }
-  h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-    text-align: center;
-  }
+   html{scroll-behavior:smooth}
   .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
       url("/hero-image.jpg");
