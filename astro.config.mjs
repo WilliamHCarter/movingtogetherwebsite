@@ -5,6 +5,5 @@ import image from "@astrojs/image";
 export default defineConfig({
   // ...
   integrations: [image()],
-  site: "https://williamhcarter.github.io/movingtogetherwebsite",
-  base: "/movingtogetherwebsite",
+  site: "movinghomestogether.com",
 });
