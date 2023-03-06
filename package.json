@@ -10,8 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@types/react-icons": "^3.0.0",
-    "astro": "^2.0.17",
-    "react-icons": "^4.8.0"
+    "@astrojs/image": "^0.15.1",
+    "astro": "^2.0.17"
   }
 }

@@ -4,12 +4,15 @@ import Card from "../components/Card.astro";
 import ProfileImage from "../components/ProfileImage.astro";
 import NavBar from "../components/NavBar.astro";
 import Contact from "../components/ContactForm.astro";
+import Hero from "/public/hero-image.jpg";
+import { Image } from "@astrojs/image/components";
 ---
 
-<Layout title="Moving Together">
+<Layout title="Moving Homes Together">
   <main>
     <NavBar />
     <div class="hero-image">
+      <Image class="imm" src={Hero} alt="" width={4032} height={2789} />
       <h2 class="hero-text">
         Getting ready to move can be stressful. We can help.
       </h2>
@@ -58,7 +61,10 @@ import Contact from "../components/ContactForm.astro";
         <ProfileImage
           src="/testm3.webp"
           title="Customer Testimonial"
-          body="Our goal is to keep your process stress free."
+          body="We had a wonderful experience working with Rachel in getting ready to move and put our house on the market.\
+          Her recommendations on home staging and space organizing greatly improved how our house presented\
+          and made our move into our new home that much easier. Rachel's professional, thorough knowledge and\
+          attitude contributed to a very successful experience. We will definitely recommend her!"
         />
       </ul>
       <div class="bottom"></div>
@@ -71,15 +77,24 @@ import Contact from "../components/ContactForm.astro";
 </Layout>
 
 <style>
-   html{scroll-behavior:smooth}
-   body{margin: 0;}
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+  }
   .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-      url("/hero-image.jpg");
     background-size: cover;
     background-position: center;
     height: 80vh;
     margin: 0 !important;
+  }
+  .imm {
+    z-index: 0;
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    filter: brightness(70%);
   }
   .hero-text {
     text-align: center;
@@ -87,6 +102,7 @@ import Contact from "../components/ContactForm.astro";
     top: 50%;
     transform: translateY(-50%);
     color: white;
+    z-index: 1;
   }
   h2 {
     font-size: 2.5rem;
@@ -120,11 +136,11 @@ import Contact from "../components/ContactForm.astro";
   .bottom {
     height: 4rem;
   }
-  .footer{
-    height:8rem;
-    background-color: #EEEEEE;
+  .footer {
+    height: 8rem;
+    background-color: #eeeeee;
   }
-  .footer > p{
+  .footer > p {
     text-align: center;
     padding-top: 4rem;
     color: rgb(89, 89, 89);
@@ -136,12 +152,12 @@ import Contact from "../components/ContactForm.astro";
     gap: 1rem;
     padding: 0;
   }
-  .testimonial-flex{
+  .testimonial-flex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
-	margin-left: 5vw;
-	margin-right: 5vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
   }
 </style>
