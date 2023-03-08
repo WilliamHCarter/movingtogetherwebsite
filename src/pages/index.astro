@@ -187,13 +187,13 @@ import { Image } from "@astrojs/image/components";
   window.addEventListener("scroll", () => {
     let { scrollY } = window;
     const yScroll = ((scrollY * 2) / window.innerHeight) * 0.6;
-    const scrollPercentage = Math.max(Math.min(yScroll, 1), 0) * 10 + 50;
+    const scrollPercentage = Math.max(Math.min(yScroll, 1), 0) * -50 + 50;
     console.log(scrollPercentage);
     hero.animate(
       {
         objectPosition: `center ${scrollPercentage}%`,
       },
-      { duration: 50, fill: "forwards" }
+      { duration: 400, fill: "forwards" }
     );
   });
 </script>
