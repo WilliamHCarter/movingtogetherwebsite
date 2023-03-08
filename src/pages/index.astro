@@ -30,7 +30,7 @@ import { Image } from "@astrojs/image/components";
         <Card
           src="/care.webp"
           title="Moving with Care and Ease"
-          body="Thinking and planning ahead can be the most important is the most part of the process."
+          body="Thinking and planning ahead for your move is the most important part of the process."
         />
         <Card
           src="/declutter.png"
@@ -99,6 +99,7 @@ import { Image } from "@astrojs/image/components";
     width: 100%;
     position: absolute;
     object-fit: cover;
+    object-position: 50% 50%;
     filter: brightness(70%);
   }
   .hero-text {
@@ -119,7 +120,7 @@ import { Image } from "@astrojs/image/components";
     h2 {
       font-size: 1.5rem;
     }
-    h1{
+    h1 {
       font-size: 2rem;
     }
   }
@@ -175,3 +176,18 @@ import { Image } from "@astrojs/image/components";
     margin-right: 5vw;
   }
 </style>
+<script>
+  const hero = document.getElementsByClassName("imm")[0];
+  window.addEventListener("scroll", () => {
+    let { scrollY } = window;
+    const yScroll = ((scrollY * 2) / window.innerHeight) * 0.6;
+    const scrollPercentage = Math.max(Math.min(yScroll, 1), 0) * 10 + 50;
+    console.log(scrollPercentage);
+    hero.animate(
+      {
+        objectPosition: `center ${scrollPercentage}%`,
+      },
+      { duration: 50, fill: "forwards" }
+    );
+  });
+</script>
