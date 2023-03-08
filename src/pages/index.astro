@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import ProfileImage from "../components/ProfileImage.astro";
 import NavBar from "../components/NavBar.astro";
+import Modal from "../components/Modal.astro";
 import Contact from "../components/ContactForm.astro";
 import Hero from "/public/hero.webp";
 import { Image } from "@astrojs/image/components";
@@ -11,6 +12,7 @@ import { Image } from "@astrojs/image/components";
 <Layout title="Moving Homes Together">
   <main>
     <NavBar />
+    <Modal />
     <div class="hero-image">
       <Image class="imm" src={Hero} alt="" width={2048} height={2048} />
       <h2 class="hero-text">
