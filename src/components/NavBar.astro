@@ -1,5 +1,6 @@
 ---
 import Logo from "../components/Logo.astro";
+import Menu from "./Menu.astro";
 ---
 
 <div class="nav-container">
@@ -7,6 +8,7 @@ import Logo from "../components/Logo.astro";
     <Logo />
     <h4>Moving | Organizing | Design</h4>
   </div>
+  <Menu />
   <div class="navlinks">
     <a href="#">Home</a>
     <a href="#openModal-about">About</a>
@@ -60,7 +62,7 @@ import Logo from "../components/Logo.astro";
     margin: 0;
     text-align: center;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     .navlinks {
       display: none;
     }
