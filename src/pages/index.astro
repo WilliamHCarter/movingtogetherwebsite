@@ -214,4 +214,9 @@ import { Image } from "@astrojs/image/components";
       }
     }
   };
+
+  document.querySelector('.hamburger')?.addEventListener('click', () => {
+  document.querySelector('.nav-links')?.classList.toggle('expanded');
+});
+
 </script>
