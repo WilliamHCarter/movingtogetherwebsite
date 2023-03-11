@@ -4,10 +4,7 @@ import Menu from "./Menu.astro";
 ---
 
 <div class="nav-container">
-  <div class="navbar">
-    <Logo />
-    <h4>Moving | Organizing | Design</h4>
-  </div>
+  <Logo />
   <Menu />
   <div class="navlinks">
     <a href="#">Home</a>
@@ -17,20 +14,6 @@ import Menu from "./Menu.astro";
   </div>
 </div>
 <style>
-  .navbar {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    flex-direction: column;
-    margin-left: 2vw;
-  }
-  h4 {
-    font-size: 1rem;
-    color: var(--accent);
-    margin: 0;
-    text-align: left;
-  }
   .nav-container {
     display: flex;
     justify-content: space-between;

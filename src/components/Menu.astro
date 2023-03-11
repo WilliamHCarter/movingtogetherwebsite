@@ -24,8 +24,6 @@
   }
 
   .nav-links {
-    width: 30%;
-    float:right;
     border-radius: 0.5rem;
     background-color: white;
     display: none;
@@ -34,12 +32,11 @@
 
   .nav-links a {
     display: block;
-    text-align: center;
+    text-align: left;
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: 600;
   }
 
   .nav-links a:hover,
@@ -49,6 +46,8 @@
 
   .expanded {
     position: fixed;
+    min-width: 29%;
+    float:right;
     z-index: 1000;
     display: flex;
     flex-direction: column;
