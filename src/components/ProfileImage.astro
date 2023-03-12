@@ -3,9 +3,10 @@ export interface Props {
   title: string;
   body: string;
   src: string;
+  user: string;
 }
 
-const { src, title, body } = Astro.props;
+const { src, title, body, user } = Astro.props;
 ---
 
 <li class="flex bg-[white] bg-none bg-[400%] bg-[100%] w-[20vw] min-w-[16rem] p-1">
@@ -19,6 +20,7 @@ const { src, title, body } = Astro.props;
     <p class="text-[#444] mt-2 mb-0">
       {body}
     </p>
+    <h3 class="text-lg text-blue mt-4"> {user}</h3>
   </a>
 </li>
 
