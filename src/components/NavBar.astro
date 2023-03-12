@@ -3,42 +3,17 @@ import Logo from "../components/Logo.astro";
 import Menu from "./Menu.astro";
 ---
 
-<div class="nav-container">
+<div class="flex justify-between items-center my-4">
   <Logo />
   <Menu />
-  <div class="navlinks">
-    <a href="#">Home</a>
-    <a href="#openModal-about">About</a>
-    <a href="#testm">Testimonials</a>
-    <a href="#contact">Contact</a>
+  <div class="navlinks hidden pc:flex justify-between items-center gap-6 mr-[2vw]">
+    <a class="text-[1.1rem] text-blue font-semibold text-center no-underline m-0" href="#">Home</a>
+    <a class="text-[1.1rem] text-blue font-semibold text-center no-underline m-0" href="#op-about">About</a>
+    <a class="text-[1.1rem] text-blue font-semibold text-center no-underline m-0" href="#testm">Testimonials</a>
+    <a class="text-[1.1rem] text-blue font-semibold text-center no-underline m-0" href="#contact">Contact</a>
   </div>
 </div>
 <style>
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  .navlinks {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    margin-right: 2vw;
-  }
-  .navlinks > a {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-    text-align: center;
-    text-decoration: none;
-    color: rgb(39, 39, 39);
-  }
-  a:hover {
-    color: var(--accent);
-  }
   h3 {
     font-size: 2rem;
     font-weight: 700;
@@ -46,9 +21,6 @@ import Menu from "./Menu.astro";
     text-align: center;
   }
   @media only screen and (max-width: 700px) {
-    .navlinks {
-      display: none;
-    }
     h3 {
       font-size: 1.5rem;
     }

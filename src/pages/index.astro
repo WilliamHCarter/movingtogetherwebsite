@@ -10,20 +10,18 @@ import { Image } from "@astrojs/image/components";
 ---
 
 <Layout title="Moving Homes Together">
-  <main>
+  <main class="flex flex-col">
     <NavBar />
     <Modal />
-    <div class="hero-image">
+    <div class="bg-cover bg-center h-[80vh] m-0">
       <Image class="imm" src={Hero} alt="" width={2048} height={2048} />
-      <h2 class="hero-text">
-        Getting ready to move can be stressful. We can help.
-      </h2>
-      <h1 class="hero-text">We are with you all the way</h1>
+      <h2 class="hero-text text-[1.5rem] pc:text-[2.5rem]">Getting ready to move can be stressful. We can help.</h2>
+      <h1 class="hero-text text-[2em] pc:text-[5rem]">We are with you all the way</h1>
     </div>
 
-    <div class="about-us" id="about">
-      <h2>About Us</h2>
-      <ul role="list" class="link-card-grid">
+    <div class="text-center text-blue mx-[10vw] my-[8vh]" id="about">
+      <h2 class="text-[2.5rem]">About Us</h2>
+      <ul role="list" class="grid grid-cols-[repeat(auto-fit,minmax(24ch,1fr))] gap-4 p-0">
         <Card
           src="/organization.webp"
           title="Organization and Planning"
@@ -42,9 +40,12 @@ import { Image } from "@astrojs/image/components";
       </ul>
     </div>
 
-    <div class="testimonials" id="testm">
-      <h2>See what our customers are saying</h2>
-      <ul role="list" class="testimonial-flex">
+    <div class="testimonials text-center text-[white] bg-cover bg-center mx-[5vh] my-[8vh]" id="testm">
+      <h2 class="text-[2.5rem] pt-12">See what our customers are saying</h2>
+      <ul
+        role="list"
+        class="grid justify-items-center grid-cols-[repeat(auto-fit,minmax(24ch,1fr))] gap-4 mx-[5vw] p-0"
+      >
         <ProfileImage
           src="/organization.webp"
           title="Customer Testimonial"
@@ -73,11 +74,13 @@ import { Image } from "@astrojs/image/components";
                 attitude contributed to a very successful experience. We will definitely recommend her!"
         />
       </ul>
-      <div class="bottom"></div>
+      <div class="h-16"></div>
     </div>
     <Contact />
-    <div class="footer">
-      <p>COPYRIGHT © 2023 MOVING TOGETHER - ALL RIGHTS RESERVED</p>
+    <div class="h-32 bg-[#eeeeee]">
+      <p class="text-center text-[rgb(89,89,89)] text-[0.8rem] pt-16">
+        COPYRIGHT © 2023 MOVING TOGETHER - ALL RIGHTS RESERVED
+      </p>
     </div>
   </main>
 </Layout>
@@ -88,16 +91,6 @@ import { Image } from "@astrojs/image/components";
   }
   body {
     margin: 0;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-  }
-  .hero-image {
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    margin: 0 !important;
   }
   .imm {
     z-index: 0;
@@ -116,71 +109,10 @@ import { Image } from "@astrojs/image/components";
     color: white;
     z-index: 1;
   }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h1 {
-    font-size: 5rem;
-  }
-  @media only screen and (max-width: 700px) {
-    h2 {
-      font-size: 1.5rem;
-    }
-    h1 {
-      font-size: 2rem;
-    }
-  }
-  .about-us {
-    margin-top: 8vh;
-    margin-bottom: 8vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    text-align: center;
-    color: var(--accent);
-  }
   .testimonials {
-    margin-top: 8vh;
-    margin-bottom: 8vh;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    text-align: center;
-    color: white;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-      url("/hero-image.webp");
-    background-size: cover;
-    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("/hero-image.webp");
   }
-  .testimonials > h2 {
-    padding-top: 3rem;
-  }
-  .bottom {
-    height: 4rem;
-  }
-  .footer {
-    height: 8rem;
-    background-color: #eeeeee;
-  }
-  .footer > p {
-    text-align: center;
-    padding-top: 4rem;
-    color: rgb(89, 89, 89);
-    font-size: 0.8rem;
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-  .testimonial-flex {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-    margin-left: 5vw;
-    margin-right: 5vw;
-  }
+
 </style>
 <script>
   const hero = document.getElementsByClassName("imm")[0];
@@ -196,27 +128,7 @@ import { Image } from "@astrojs/image/components";
       { duration: 400, fill: "forwards" }
     );
   });
-
-    // Move the function definition to the global scope
-    function myFunction() {
-    document.getElementById("myDropdown")!.classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = (event: MouseEvent): void => {
-    if (!(event.target as Element).matches('.dropbtn')) {
-      const dropdowns = document.getElementsByClassName("dropdown-content");
-      for (let i = 0; i < dropdowns.length; i++) {
-        const openDropdown = dropdowns[i] as HTMLElement;
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  };
-
-  document.querySelector('.hamburger')?.addEventListener('click', () => {
-  document.querySelector('.nav-links')?.classList.toggle('expanded');
-});
-
+  document.querySelector(".menu")?.addEventListener("click", () => {
+    document.querySelector(".nav-links")?.classList.toggle("expanded");
+  });
 </script>

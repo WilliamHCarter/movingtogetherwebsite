@@ -8,67 +8,17 @@ export interface Props {
 const { src, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-  <a>
-    <div class="image-container">
-      <img src={src} alt="Astro" />
+<li class="flex bg-[white] bg-none bg-[400%] bg-[100%] w-[20vw] min-w-[16rem] p-1">
+  <a class="w-full no-underline leading-[1.4] bg-[white] flex flex-col items-center justify-start my-8 px-5 py-4">
+    <div class="flex items-center justify-center aspect-[1/1] mb-8 mx-[30%]">
+      <img class="w-full aspect-[1/1] rounded-[50%]" src={src} alt="Astro" />
     </div>
-    <h2>
+    <h2 class="text-xl text-blue mt-4 mb-8">
       {title}
     </h2>
-    <p>
+    <p class="text-[#444] mt-2 mb-0">
       {body}
     </p>
   </a>
 </li>
-<style>
-  .link-card {
-    list-style: none;
-    display: flex;
-    padding: 0.25rem;
-    background-color: white;
-    background-image: none;
-    background-size: 400%;
-    background-position: 100%;
-    width: 20vw;
-    min-width: 16rem;
-  }
-  .link-card > a {
-    width: 100%;
-    text-decoration: none;
-    line-height: 1.4;
-    padding: 1rem 1.3rem;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-  .image-container {
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1/1;
-  }
-  img {
-    width: 100%;
-    border-radius: 50%;
-    aspect-ratio: 1/1;
-  }
-  h2 {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-size: 1.25rem;
-    color: var(--accent);
-  }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    color: #444;
-  }
-</style>
+
