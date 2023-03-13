@@ -133,4 +133,9 @@ import { Image } from "@astrojs/image/components";
   document.querySelector(".menu")?.addEventListener("click", () => {
     document.querySelector(".nav-links")?.classList.toggle("expanded");
   });
+  document.querySelector(".imm")?.addEventListener("click", () => {
+    if (document.querySelector(".nav-links")?.classList.contains("expanded")) {
+      document.querySelector(".nav-links")?.classList.toggle("expanded");
+    }
+  });
 </script>
