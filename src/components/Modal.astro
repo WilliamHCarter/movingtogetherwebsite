@@ -1,10 +1,12 @@
-<div id="op-about" class="modalDialog">
-  <div class="content">
+<div id="op-about" class="modalDialog fixed z-[99999] inset-0">
+  <div class="flex flex-col max-w-[max(50vh,40vw)] relative mx-auto my-[10%] pb-8 px-8 p-4 rounded-lg bg-white">
     <div class="flex justify-between items-center flex-row">
       <h2 class="text-blue text-[1.2rem] font-semibold">About Rachel</h2>
-      <a href="#close" title="Close" class="close"><img src="/close.svg" alt="close"/></a>
+      <a href="#close" title="Close" class="close">
+        <img src="/close.svg" alt="close flex justify-center items-center w-8 h-8 no-underline font-bold text-[grey]"/>
+      </a>
     </div>
-    <p class="mt-2">
+    <p class="mt-2 text-sm pc:text-base">
       Through her years of working as a realtor as well as her personal experience in helping her parents and clients
       downsize, Rachel has learned that planning ahead is essential to any potential move. Too many of us wait too long
       to start editing, organizing and decluttering. The key is to think ahead and don’t wait. Start your process now!<br
@@ -21,13 +23,7 @@
 
 <style>
   .modalDialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background: rgba(0, 0, 0, 0.65);
-    z-index: 99999;
     opacity: 0;
     transition: opacity 150ms ease-in;
     pointer-events: none;
@@ -36,42 +32,13 @@
     opacity: 1;
     pointer-events: auto;
   }
-  .content {
-    display: flex;
-    flex-direction: column;
-  }
-  .modalDialog > div {
-    max-width: max(50vh, 40vw);
-    position: relative;
-    margin: 10% auto;
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
-    border-radius: 0.5rem;
-    background: #fff;
-  }
-  .close {
-    color: #aaaaaa;
-    width: 2rem;
-    height: 2rem;
-
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .close:hover {
     background-color: #bebebe84;
     border-radius: 10%;
   }
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 520px) {
     .modalDialog > div {
       margin: 10% 5% 10% 5%;
-    }
-    p {
-      font-size: 0.8rem;
     }
   }
 </style>
