@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar.astro";
 import Modal from "../components/Modal.astro";
 import Contact from "../components/ContactForm.astro";
 import Hero from "/public/hero.webp";
+import HeroMobile from "/public/mobile/hero-mobile.webp";
 import { Image } from "@astrojs/image/components";
 ---
 
@@ -14,9 +15,10 @@ import { Image } from "@astrojs/image/components";
     <NavBar />
     <Modal />
     <div class="bg-cover bg-center h-[80vh] m-0">
-      <Image class="imm" src={Hero} alt="" width={2048} height={2048} />
-      <h2 class="hero-text text-[1.5rem] pc:text-[2.5rem]">Getting ready to move can be stressful. We can help.</h2>
-      <h1 class="hero-text text-[2em] pc:text-[5rem]">We are with you all the way</h1>
+      <Image class="imm hidden pc:block" src={Hero} alt="" width={2048} height={2048} />
+      <Image class="imm pc:hidden" src={HeroMobile} alt="" width={1024} height={1024} />
+      <h2 class="hero-text text-[1.5rem] tablet:text-[2.5rem]">Getting ready to move can be stressful. We can help.</h2>
+      <h1 class="hero-text text-[2em] tablet:text-[5rem]">We are with you all the way</h1>
     </div>
 
     <div class="text-center text-blue mx-[10vw] my-[8vh]" id="about">
@@ -24,16 +26,19 @@ import { Image } from "@astrojs/image/components";
       <ul role="list" class="grid grid-cols-[repeat(auto-fit,minmax(24ch,1fr))] gap-4 p-0">
         <Card
           src="/organization.webp"
+          srcmobile="mobile/organization-mobile.webp"
           title="Organization and Planning"
           body="Making the most of your space - edit and organize."
         />
         <Card
           src="/care.webp"
+          srcmobile="mobile/care-mobile.webp"
           title="Moving with Care and Ease"
           body="Thinking and planning ahead for your move is the most important part of the process."
         />
         <Card
           src="/declutter.webp"
+          srcmobile="mobile/declutter-mobile.webp"
           title="Decluttering and Downsizing"
           body="Our goal is to keep your process stress free."
         />
@@ -48,6 +53,7 @@ import { Image } from "@astrojs/image/components";
       >
         <ProfileImage
           src="/organization.webp"
+          srcmobile="mobile/organization-mobile.webp"
           title="Customer Testimonial"
           body="We had a stress-free and easy move with the help of Rachel and her team. \
 			          From assistance with downsizing editing, and decluttering to packing and moving,\
@@ -56,6 +62,7 @@ import { Image } from "@astrojs/image/components";
         />
         <ProfileImage
           src="/care.webp"
+          srcmobile="mobile/care-mobile.webp"
           title="Customer Testimonial"
           body="My husband and I have worked with Rachel Carter for over a year.\
 			          We wanted to sell our 'too large' home and downsize to a smaller property.\
@@ -68,6 +75,7 @@ import { Image } from "@astrojs/image/components";
         />
         <ProfileImage
           src="/declutter.webp"
+          srcmobile="mobile/declutter-mobile.webp"
           title="Customer Testimonial"
           body="We had a wonderful experience working with Rachel in getting ready to move\
                 and put our house on the market. Her recommendations on home staging and space\
@@ -112,8 +120,15 @@ import { Image } from "@astrojs/image/components";
     color: white;
     z-index: 1;
   }
-  .testimonials {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("/hero-image.webp");
+  @media (max-width: 700px) {
+    .testimonials {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("mobile/testm-mobile.webp");
+    }
+  }
+  @media (min-width: 700px) {
+    .testimonials {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("/testm.webp");
+    }
   }
 </style>
 <script>
@@ -122,20 +137,34 @@ import { Image } from "@astrojs/image/components";
     let { scrollY } = window;
     const yScroll = ((scrollY * 2) / window.innerHeight) * 0.6;
     const scrollPercentage = Math.max(Math.min(yScroll, 1), 0) * -50 + 50;
-    console.log(scrollPercentage);
-    hero.animate(
-      {
-        objectPosition: `center ${scrollPercentage}%`,
-      },
-      { duration: 400, fill: "forwards" }
-    );
+    if (window.screen.width > 700) {
+      console.log(scrollPercentage);
+      hero.animate(
+        {
+          objectPosition: `center ${scrollPercentage}%`,
+        },
+        { duration: 400, fill: "forwards" }
+      );
+    }
   });
   document.querySelector(".menu")?.addEventListener("click", () => {
-    document.querySelector(".nav-links")?.classList.toggle("expanded");
+    const navLinks = document.querySelector(".nav-links");
+    if (navLinks) {
+      navLinks.classList.add("expanding");
+      setTimeout(() => {
+        navLinks.classList.remove("expanding");
+        navLinks.classList.toggle("expanded");
+      }, 50);
+    }
   });
   document.querySelector(".imm")?.addEventListener("click", () => {
-    if (document.querySelector(".nav-links")?.classList.contains("expanded")) {
-      document.querySelector(".nav-links")?.classList.toggle("expanded");
+    const navLinks = document.querySelector(".nav-links");
+    if (navLinks && navLinks.classList.contains("expanded")) {
+      navLinks.classList.add("expanding");
+      setTimeout(() => {
+        navLinks.classList.remove("expanding");
+        navLinks.classList.toggle("expanded");
+      }, 200);
     }
   });
 </script>

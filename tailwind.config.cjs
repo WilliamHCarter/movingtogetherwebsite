@@ -11,6 +11,7 @@ module.exports = {
 		  },
 		  screens: {
 			'pc': '700px',
+			'tablet': '900px',
 		  },
 	},
 	plugins: [],
