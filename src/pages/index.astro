@@ -14,14 +14,14 @@ import { Image } from "@astrojs/image/components";
   <main class="flex flex-col">
     <NavBar />
     <Modal />
-    <div class="bg-cover bg-center h-[80vh] m-0">
+    <div class="bg-cover bg-center h-[80svh] m-0">
       <Image class="imm hidden pc:block" src={Hero} alt="" width={2048} height={2048} />
       <Image class="imm pc:hidden" src={HeroMobile} alt="" width={1024} height={1024} />
       <h2 class="hero-text text-[1.5rem] tablet:text-[2.5rem]">Getting ready to move can be stressful. We can help.</h2>
       <h1 class="hero-text text-[2em] tablet:text-[5rem]">We are with you all the way</h1>
     </div>
 
-    <div class="text-center text-blue mx-[10vw] my-[8vh]" id="about">
+    <div class="text-center text-blue mx-[10vw] my-[8svh]" id="about">
       <h2 class="text-[2.5rem]">About Us</h2>
       <ul role="list" class="grid grid-cols-[repeat(auto-fit,minmax(24ch,1fr))] gap-4 p-0">
         <Card
@@ -45,7 +45,7 @@ import { Image } from "@astrojs/image/components";
       </ul>
     </div>
 
-    <div class="testimonials text-center text-[white] bg-cover bg-center mx-[5vh] my-[8vh]" id="testm">
+    <div class="testimonials text-center text-[white] bg-cover bg-center mx-[5svh] my-[8vh]" id="testm">
       <h2 class="text-[2.5rem] pt-12 mb-6">See what our customers are saying</h2>
       <ul
         role="list"
@@ -105,7 +105,7 @@ import { Image } from "@astrojs/image/components";
   }
   .imm {
     z-index: 0;
-    height: 80vh;
+    height: 80svh;
     width: 100%;
     position: absolute;
     object-fit: cover;
